@@ -4,7 +4,14 @@ import { Server } from 'socket.io'
 
 const app = express()
 const server = createServer(app)
-const io = new Server(server)
+const port = 3000
+const vitePort = 5173 // set in ./vite.config.ts
+
+const io = new Server(server, {
+  cors: {
+    origin: `http://localhost:${vitePort}`,
+  },
+})
 
 let count = 0
 let timestamps = []
@@ -18,27 +25,32 @@ export function logCounterIncrement(bool) {
   }
   timestamps.push(datetime)
 
-  // enable console logging of dates and count
   if (bool) {
     const i = (count % 5) - 1
     console.log(timestamps.at(i), `count: ${count}`)
   }
 }
 
-io.on('connection', socket => {
-  console.log('a user connected')
-
-  // update newly connected client with current count
-  socket.emit('updateCount', count)
-
+function incrementAndBroadcast(socket) {
   socket.on('increment', amount => {
     count += amount
     // broadcast to all connected clients
     io.emit('updateCount', count)
     logCounterIncrement(true)
   })
+}
+
+function updateCount(socket) {
+  socket.emit('updateCount', count)
+}
+
+// socket.io entry point
+io.on('connection', socket => {
+  console.log('a user connected')
+  updateCount(socket)
+  incrementAndBroadcast(socket)
 })
 
-server.listen(3000, () => {
-  console.log('server running at http://localhost:3000')
+server.listen(port, () => {
+  console.log(`server running at http://localhost:${port}`)
 })

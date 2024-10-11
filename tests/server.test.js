@@ -1,10 +1,15 @@
 import { beforeAll, afterAll, describe, it, expect, vi } from 'vitest'
-import { logCounterIncrement } from '../server.js'
 import { createServer } from 'node:http'
 import { Server } from 'socket.io'
 import ioc from 'socket.io-client'
 
+import { logCounterIncrement } from '../server.js'
+
 // Test log function
+describe('server should start with count = 0', () => {
+  expect(count).toEqual(0)
+})
+
 // code from: https://stackoverflow.com/a/76271250
 describe('test logCounterIncrement', () => {
   const consoleMock = vi
@@ -52,13 +57,13 @@ describe('test socket client/server communication', () => {
     clientSocket.disconnect()
   })
 
-  it('client should receive updated count', () => {
+  it('client and server should communicate', () => {
     return new Promise(resolve => {
-      clientSocket.on('countUpdated', arg => {
-        expect(arg).toEqual(5)
+      clientSocket.on('hello', arg => {
+        expect(arg).toEqual('there')
         resolve()
       })
-      serverSocket.emit('countUpdated', 5)
+      serverSocket.emit('hello', 'there')
     })
   })
 })
