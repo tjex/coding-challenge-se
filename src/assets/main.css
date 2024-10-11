@@ -33,3 +33,13 @@ a,
     padding: 0 2rem;
   }
 }
+
+button {
+  margin: 10px;
+  padding: 10px;
+}
+
+.count {
+  font-size: 2em;
+  border-bottom: 2px solid;
+}

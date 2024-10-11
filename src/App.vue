@@ -6,7 +6,7 @@ import Counter from './components/Counter.vue'
   <header>
 
     <div class="wrapper">
-      <h1> Coding Challenge: Tillman </h1>
+      <h1> Coding Challenge: Tillman Jex </h1>
     </div>
   </header>
 

@@ -1,9 +1,11 @@
 <!-- Counter component contains a button to increment as well as the current count -->
 
 <template>
-  <button @click="increment()">Increment</button>
-  <br>
-  {{ count }}
+  <center>
+    <span class="count">{{ count }} </span>
+    <br>
+    <button class="incrementor" @click="increment()">Increment</button>
+  </center>
 </template>
 
 <script>
@@ -28,3 +30,6 @@ export default {
 }
 
 </script>
+
+<style>
+</style>
