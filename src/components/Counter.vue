@@ -1,5 +1,3 @@
-<!-- Counter component contains a button to increment as well as the current count -->
-
 <template>
   <center>
     <span class="count">{{ count }} </span>
@@ -9,8 +7,6 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-
 let count = 0;
 
 export default {
@@ -30,6 +26,3 @@ export default {
 }
 
 </script>
-
-<style>
-</style>
