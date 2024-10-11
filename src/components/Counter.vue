@@ -4,27 +4,25 @@
   <button class="incrementor" @click="increment()">Increment</button>
 </template>
 
-<script>
-import { socket } from '@/socket'
+<script lang="ts">
+import { socket } from '@/socket';
 
 export default {
   data() {
     return {
-      count: 0
-    }
+      count: 0,
+    };
   },
   created() {
-    socket.on('updateCount', (count) => {
+    socket.on('updateCount', (count: number) => {
       this.count = count;
-    })
+    });
   },
-
   methods: {
     increment() {
-      socket.emit('increment', 1)
-    }
-  }
-
-}
-
+      socket.emit('increment', 1);
+    },
+  },
+};
 </script>
+

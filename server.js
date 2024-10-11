@@ -11,7 +11,7 @@ let timestamps = []
 
 // Logs the date and time of counter increments.
 // A maximum of 5 logs are stored.
-function logCounterIncrement(bool) {
+export function logCounterIncrement(bool) {
   const datetime = new Date().toUTCString()
   if (timestamps.length >= 5) {
     timestamps = []
