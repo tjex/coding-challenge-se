@@ -5,8 +5,7 @@
 </template>
 
 <script>
-import { socket } from '../socket.js'
-let count = 0;
+import { socket } from '@/socket'
 
 export default {
   data() {
@@ -14,15 +13,15 @@ export default {
       count: 0
     }
   },
+  created() {
+    socket.on('updateCount', (count) => {
+      this.count = count;
+    })
+  },
 
   methods: {
     increment() {
-      count++
-        console.log("incremented")
-      socket.emit('increment', () => {
-        console.log("incremented")
-      })
-      this.count = count
+      socket.emit('increment', 1)
     }
   }
 
