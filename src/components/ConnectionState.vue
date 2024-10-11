@@ -2,16 +2,16 @@
   <p>Socket.io connected: {{ connected }}</p>
 </template>
 
-<script>
-import { state } from "@/socket";
+<script lang="ts">
+import { state } from '@/socket'
 
 export default {
-  name: "ConnectionState",
+  name: 'ConnectionState',
 
   computed: {
     connected() {
-      return state.connected;
-    }
-  }
+      return state.connected
+    },
+  },
 }
 </script>

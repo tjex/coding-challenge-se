@@ -1,28 +1,29 @@
 <template>
   <span class="count">{{ count }} </span>
-  <br>
+  <br />
   <button class="incrementor" @click="increment()">Increment</button>
 </template>
 
 <script lang="ts">
-import { socket } from '@/socket';
+import { socket } from '@/socket'
 
 export default {
+  name: 'Counter',
+
   data() {
     return {
       count: 0,
-    };
+    }
   },
   created() {
     socket.on('updateCount', (count: number) => {
-      this.count = count;
-    });
+      this.count = count
+    })
   },
   methods: {
     increment() {
-      socket.emit('increment', 1);
+      socket.emit('increment', 1)
     },
   },
-};
+}
 </script>
-
