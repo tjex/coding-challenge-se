@@ -5,9 +5,8 @@ import ConnectionState from './components/ConnectionState.vue'
 
 <template>
   <header>
-
     <div class="wrapper">
-      <h1> Coding Challenge: Tillman Jex </h1>
+      <h1>Coding Challenge: Tillman Jex</h1>
     </div>
   </header>
 
