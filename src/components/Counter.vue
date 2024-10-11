@@ -1,10 +1,11 @@
 <template>
-    <span class="count">{{ count }} </span>
-    <br>
-    <button class="incrementor" @click="increment()">Increment</button>
+  <span class="count">{{ count }} </span>
+  <br>
+  <button class="incrementor" @click="increment()">Increment</button>
 </template>
 
 <script>
+import { socket } from '../socket.js'
 let count = 0;
 
 export default {
@@ -17,6 +18,10 @@ export default {
   methods: {
     increment() {
       count++
+        console.log("incremented")
+      socket.emit('increment', () => {
+        console.log("incremented")
+      })
       this.count = count
     }
   }
