@@ -1,14 +1,17 @@
 <script setup lang="ts">
+import Counter from './components/Counter.vue'
 </script>
 
 <template>
   <header>
 
     <div class="wrapper">
+      <h1> Coding Challenge: Tillman </h1>
     </div>
   </header>
 
   <main>
+    <Counter />
   </main>
 </template>
 
