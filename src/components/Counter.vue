@@ -1,9 +1,7 @@
 <template>
-  <center>
     <span class="count">{{ count }} </span>
     <br>
     <button class="incrementor" @click="increment()">Increment</button>
-  </center>
 </template>
 
 <script>

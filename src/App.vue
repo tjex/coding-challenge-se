@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Counter from './components/Counter.vue'
+import ConnectionState from './components/ConnectionState.vue'
 </script>
 
 <template>
@@ -11,7 +12,12 @@ import Counter from './components/Counter.vue'
   </header>
 
   <main>
-    <Counter />
+    <center>
+      <Counter />
+      <p>
+        <ConnectionState />
+      </p>
+    </center>
   </main>
 </template>
 
