@@ -8,6 +8,8 @@
 import { socket } from '@/socket'
 
 export default {
+  name: 'Counter',
+
   data() {
     return {
       count: 0,
