@@ -1,4 +1,4 @@
-# coding-challenge
+# Coding Challenge - Tillman Jex
 
 My solution uses websockets to handle the requirement of maintaining the same
 count between multiple clients. This addresses the issue of a REST api, where
