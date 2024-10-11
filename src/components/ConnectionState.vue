@@ -2,7 +2,7 @@
   <p>Socket.io connected: {{ connected }}</p>
 </template>
 
-<script>
+<script lang="ts">
 import { state } from '@/socket'
 
 export default {
