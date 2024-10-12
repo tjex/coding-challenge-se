@@ -62,7 +62,7 @@ serving of files with express.
   blogs.
 - testing the functionality of the increment button functionality itself
   would've been better than simply checking its initial state.
-- I ran into my larges troubles with:
+- I ran into my largest troubles with:
   - trying to serve the vue app live with express and socket.io at the same time
     (instead of vite running the frontend)
   - CORS issues due to a gap in my understanding of implementing socket.io,
@@ -82,7 +82,7 @@ serving of files with express.
 
 (Some) references followed:
 
-- httpsSocket and express: ://socket.io/docs
+- Official documentation of socket.io, vite, vitest and vue.
 - Socket and express: https://www.youtube.com/watch?v=MbStdet9aVk
 - Testing socket:
   https://medium.com/@juaogui159/how-to-effectively-write-integration-tests-for-websockets-using-vitest-and-socket-io-360208978210
